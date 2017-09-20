@@ -1,6 +1,6 @@
 # pyML*: the python MicroLensing modelling suite
 
-Modelling packages for Gravitational Microlensing
+Modelling packages for gravitational microlensing
 
 Available packages (1):
 
