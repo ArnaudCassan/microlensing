@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
 
-#   Copyright (c) 2017, Arnaud Cassan
-#   All rights reserved.
+# ====================================================================
+#   Methods of quadrupole() and hexadecapole() from publication:
+#     Cassan, A. Fast computation of quadrupole and hexadecapole
+#                approximations in microlensing with a single
+#                point-source evaluation.
+#     Mon. Not. R. Astron. 468, 3993 (2017)
+# ====================================================================
 
 import numpy as np
 from copy import copy
