@@ -1,4 +1,4 @@
 language: python
 
 install:
-  - pip install microlensing
+  - pip install microlensing/
