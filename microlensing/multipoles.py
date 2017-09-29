@@ -34,6 +34,8 @@ def example():
     Wk[3] = 2./(1.+q)*(1./z0**3+q/(z0+s)**3)
     Wk[4] = -6./(1.+q)*(1./z0**4+q/(z0+s)**4)
     A0,A2 = quadrupole(Wk,rho,Gamma)
+    print " A0, A2 = ", A0, A2
+    print " ... should give: 6.08605 6.17629"
 # Choice 2: Quadrupole (A2) and Hexadecapole (A4)
     Wk[2] = -1./(1.+q)*(1./z0**2+q/(z0+s)**2)
     Wk[3] = 2./(1.+q)*(1./z0**3+q/(z0+s)**3)
@@ -41,6 +43,8 @@ def example():
     Wk[5] = 24./(1.+q)*(1./z0**5+q/(z0+s)**5)
     Wk[6] = -120./(1.+q)*(1./z0**6+q/(z0+s)**6)
     A0,A2,A4 = hexadecapole(Wk,rho,Gamma)
+    print " A0, A2, A4 = ", A0, A2, A4
+    print " ... should give: 6.08605 6.17629 6.18172"
     return
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
