@@ -4,6 +4,5 @@ python:
 install:
     - python setup.py install
 script:
-
-#    - pwd
+    - pwd
 #    - py.test -q microlensing/multipoles.py
