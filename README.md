@@ -2,6 +2,7 @@ microlensing
 ======
 
 <a href="https://travis-ci.org/ArnaudCassan/microlensing"><img src="https://travis-ci.org/ArnaudCassan/microlensing.svg?branch=master"></a>
+<a href="http://ascl.net/1704.014"><img src="https://img.shields.io/badge/ascl-1704.014-blue.svg?colorB=262255" alt="ascl:1704.014" /></a>
 
 Goals
 -----
