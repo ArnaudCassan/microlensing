@@ -28,7 +28,7 @@ $ pip install --user microlensing/
 import microlensing
 ```
 
-Moduleses included and examples
+Modules included and examples
 --------
 
 ### Loading a binary-lens caustic object
@@ -47,7 +47,7 @@ cc.pltcaus()
 
 ### Quadrupolar and Hexadecapolar approximations of binary-lens magnification 
 
-Compute the binary-lens magnification for a: point-source (A0), quadrupole (A2) and Hexadecapole (A4) approximations using the method by <a href="http://adsabs.harvard.edu/abs/2017MNRAS.468.3993C">Cassan (2017)</a>:
+Compute the binary-lens magnification for a: point-source (A0), quadrupole (A2) and Hexadecapole (A4) approximations using the method by <a href="http://adsabs.harvard.edu/abs/2017MNRAS.468.3993C">Cassan (2017)</a>.
 
 ```python
 from microlensing import multipoles
@@ -56,7 +56,9 @@ multipoles.example()
 
 ### Q factors entering the expansion of z(zeta) of the lens equation
 
-Compute the Q_(p-n,n) factors (p>=3) from <a href="http://adsabs.harvard.edu/abs/2017MNRAS.468.3993C">Cassan (2017)</a>:
+Compute the Q_(p-n,n) factors (p>=3) from <a href="http://adsabs.harvard.edu/abs/2017MNRAS.468.3993C">Cassan (2017)</a>.
+This function is currently working for python 2 only.
+
 ```python
 from microlensing import Rkp
 Rkp.Q(3)
@@ -65,7 +67,7 @@ Rkp.Q(3)
 License
 -------
 
-This software is licensed under the Apache 2.0 license. See the [LICENSE](LICENSE) file
+This software is licensed under the MIT License. See the [LICENSE](LICENSE) file
 for details.
 
 <!-- Commentaire  --> 
