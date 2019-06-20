@@ -20,6 +20,7 @@ To install the current development version of the <b>microlensing</b> package fr
 $ git clone https://github.com/ArnaudCassan/microlensing.git
 $ pip install --user microlensing/
 ```
+(you may not need the `--user` option)
 
 ### Loading
 
@@ -27,8 +28,22 @@ $ pip install --user microlensing/
 import microlensing
 ```
 
-Examples
+Moduleses included and examples
 --------
+
+### Loading a binary-lens caustic object
+
+For a given `(s, q)` binary lens configuration, where `s` is the lens separation (in Einstein units) and `q` the lens mass ratio, create an object which contains the critical curves, the caustics, and if specified the  location of the cusps. It also contains the topology of the caustics (close, intermediate or wide). Plotting function are included to visualize the critical curves, caustics and cusps. There are a number of options detailed in `help(Caustics)`.
+
+```python
+from microlensing.caustics import Caustics
+cc = Caustics(1.4, 0.1, N=400)
+cc.pltcrit()
+cc.pltcaus()
+
+cc = Caustics(1.4, 0.1, cusp=True)
+cc.pltcaus()
+```
 
 ### Quadrupolar and Hexadecapolar approximations of binary-lens magnification 
 
