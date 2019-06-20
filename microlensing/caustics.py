@@ -71,13 +71,13 @@ class Caustics():
         >>> cc.pltcrit(axis=[-4, 4, -1, 2], figname='critcurves.pdf')
         
         >>> cc = Caustics(1.4, 0.1, N=None)
-        >>> print cc.topo
+        >>> print(cc.topo)
         'interm'
         
         >>> cc = Caustics(0.3, 0.0001, N=400, cusp=True)
         >>> cc.pltcaus()
         >>> for key in cc.cusps:
-                print key, cc.cusps[key]
+                print(key, cc.cusps[key])
         secondary_up [ 3.03254412-0.06355483j  3.03291176-0.06355996j
                 3.03272425-0.06384869j]
         central [  1.22467386e-05 +0.00000000e+00j   3.07584367e-06
@@ -641,8 +641,8 @@ if __name__ == '__main__':
     cc = Caustics(0.3, 0.0001, N=400, cusp=True)
     cc.pltcrit()
     cc.pltcaus()
-    print cc.topo
+    print(cc.topo)
     for key in cc.cusps:
-        print key, cc.cusps[key]
+        print(key, cc.cusps[key])
 
 

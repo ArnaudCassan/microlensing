@@ -194,6 +194,10 @@ def hexadecapole(Wk, rho, Gamma):
 def Q(p):
     """Compute factors Q(p-n, n)
         
+        Warning
+        -------
+        This specific function does not work with python 3
+        
         Parameter
         ---------
         p : int
@@ -222,7 +226,7 @@ def Q(p):
             Q[m,n] = _Qpartial(m,Q[m-1,n])+','+_Qproduct(m,Q[m-1,n-1])
         Q[m,m+1] = _Qproduct(m,Q[m-1,m])
     for m in range(3,M+1):
-        print '\033[35m Order p='+str(m)+'\033[30m'
+        print('\033[35m Order p='+str(m)+'\033[30m')
         seq = 'b'*m
         lseq = [seq]
         for p in range(0,m):
@@ -231,22 +235,22 @@ def Q(p):
         for p in range(0,m+1):
             curseq = lseq.pop(0)
             S = copy(Q)
-            print '\n\033[36m   Q['+str(m-p)+','+str(p)+'] :\033[30m'
+            print('\n\033[36m   Q['+str(m-p)+','+str(p)+'] :\033[30m')
             for n in range(3,m+2):
                 for k in range(0,m):
                     S[m,n] = S[m,n].replace(str(k+1),curseq[k])
-                print '\n\033[34m     W'+str(n)+' * \033[30m(',
+                print('\n\033[34m     W'+str(n)+' * \033[30m(',)
                 C = S[m,n].split(',')
                 for i in range(0,len(C)):
                     D =  C[i].split(' ')
                     for j in range(0,len(D)):
-                        print 'a'+str(D[j].count('a'))+str(D[j].count('b')),
-                        if (j < len(D)-1): print '*',
+                        print('a'+str(D[j].count('a'))+str(D[j].count('b')),)
+                        if (j < len(D)-1): print('*',)
                         na = D[j].count('a')
                         nb = D[j].count('b')
-                    if (i < len(C)-1): print '+',
-                    else: print ')',
-                if (n > m): print '\n'
+                    if (i < len(C)-1): print('+',)
+                    else: print(')',)
+                if (n > m): print('\n')
 
 def _Qpartial(m, Q):
     """Partial operator in Q(p)"""
