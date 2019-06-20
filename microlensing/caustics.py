@@ -11,9 +11,7 @@ import sys, os
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
-from copy import copy
 import scipy.optimize as opt
-import warnings
 
 class Caustics():
     """Binary-lens caustics, critical curves and cusps
@@ -149,7 +147,6 @@ class Caustics():
             maxiter = 100
             xtol = 1e-16
             # (Ox)
-#            zc = copy(self.zc[0] - self._AC2CM)
             arg = np.argsort(np.imag(zc))
             arg = arg[[1, 2]]
             zc = zc[arg]
@@ -234,7 +231,6 @@ class Caustics():
             maxiter = 100
             xtol = 1e-16
             # (Ox)
-#            zc = copy(self.zc[0] - self._AC2CM)
             arg = np.argsort(np.imag(zc))
             arg = arg[[1, 2]]
             zc = zc[arg]
@@ -283,7 +279,6 @@ class Caustics():
             epsc = 1e-2
             lbdmax = 1e8
             # (Ox)
-#            zc = copy(self.zc[0] - self._AC2CM)
             arg = np.argsort(np.real(zc))
             sort = zc[arg]
             ## central caustic
