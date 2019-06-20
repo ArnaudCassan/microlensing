@@ -26,16 +26,18 @@ setup_args = dict(
     author          = 'Arnaud Cassan',
     author_email    = 'cassan@iap.fr',
     url             = 'https://github.com/ArnaudCassan/microlensing',
-    license         = 'Apache',
+    license         = 'MIT License',
     platforms       = "Linux, Mac OS X, Windows",
-    keywords        = ['Astronomy', 'Astrophysics', 'Microlensing', 'Science', 'exoplanets'],
+    keywords        = ['Astronomy', 'Astrophysics', 'Microlensing', 'Science', 'Exoplanets'],
     classifiers     = [
         'Intended Audience :: Developers',
         'Intended Audience :: System Administrators',
         'Intended Audience :: Science/Research',
-        'License :: OSI Approved :: Apache License',
+        'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+
     ],
 )
 
