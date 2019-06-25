@@ -1,17 +1,21 @@
 # -*- coding: utf-8 -*-
-"""Multipolar coefficients of binary-lens finite-source magnification"""
 
-# Copyright (c) 2017-2019 Arnaud Cassan
-# Distributed under the terms of the MIT license
-
-# This module is part of the microlensing suite:
-#       https://github.com/ArnaudCassan/microlensing
-
-# This module is based on method presented in publication:
-#   Cassan, A. (2017), Fast computation of quadrupole and hexadecapole
-#       approximations in microlensing with a single point-source
-#       evaluation, Mon. Not. R. Astron. 468, 3993.
-# Please quote if used for a publication
+#############################################################################
+# Copyright (c) 2017, Arnaud Cassan                                         #
+#                                                                           #
+# Distributed under the terms of the MIT license.                           #
+#                                                                           #
+# The full license is in the file LICENSE, distributed with this software.  #
+#                                                                           #
+# This module is part of gravitational microlensing package:                #
+# https://github.com/ArnaudCassan/microlensing                              #
+#                                                                           #
+# This module is based on method presented in publication:                  #
+#   Cassan, A. (2017), Fast computation of quadrupole and hexadecapole      #
+#       approximations in microlensing with a single point-source           #
+#       evaluation, Mon. Not. R. Astron. 468, 3993.                         #
+#   Please quote if used for a publication                                  #
+#############################################################################
 
 import numpy as np
 from copy import copy

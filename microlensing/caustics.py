@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
-"""Binary lens critical curves, caustics and cusps"""
 
-# Copyright (c) 2017-2019 Arnaud Cassan
-# Distributed under the terms of the MIT license
-
-# This module is part of the microlensing suite:
-#       https://github.com/ArnaudCassan/microlensing
+#############################################################################
+# Copyright (c) 2017, Arnaud Cassan                                         #
+#                                                                           #
+# Distributed under the terms of the MIT license.                           #
+#                                                                           #
+# The full license is in the file LICENSE, distributed with this software.  #
+#                                                                           #
+# This module is part of gravitational microlensing package:                #
+# https://github.com/ArnaudCassan/microlensing                              #
+#############################################################################
 
 import sys, os
 import numpy as np
