@@ -1,21 +1,11 @@
-# -*- coding: utf-8 -*-
+# Copyright (c) Arnaud Cassan.
+# Distributed under the terms of the MIT license.
 
-#############################################################################
-# Copyright (c) 2017, Arnaud Cassan                                         #
-#                                                                           #
-# Distributed under the terms of the MIT license.                           #
-#                                                                           #
-# The full license is in the file LICENSE, distributed with this software.  #
-#                                                                           #
-# This module is part of gravitational microlensing package:                #
-# https://github.com/ArnaudCassan/microlensing                              #
-#                                                                           #
-# This module is based on method presented in publication:                  #
-#   Cassan, A. (2017), Fast computation of quadrupole and hexadecapole      #
-#       approximations in microlensing with a single point-source           #
-#       evaluation, Mon. Not. R. Astron. 468, 3993.                         #
-#   Please quote if used for a publication                                  #
-#############################################################################
+# Associated publication:
+#   Cassan, A. (2017), Fast computation ofcquadrupole
+#   and hexadecapole approximations in microlensing
+#   with a single point-sourcecevaluation,
+#   Mon. Not. R. Astron. 468, 3993.
 
 import numpy as np
 from copy import copy
@@ -43,6 +33,7 @@ def Q(p):
         approximations in microlensing with a single point-source
         evaluation, Mon. Not. R. Astron. 468, 3993.
         """
+    # algorithm
     M = p
     Q = np.zeros((M+1,M+2),dtype='S1000')
     Q[2,3] = '1 2'
@@ -82,7 +73,8 @@ def Q(p):
                 if (n > m): print('\n')
 
 def _Qpartial(m, Q):
-    """Partial operator in Q(p)"""
+    """Partial operator in Q(p)
+    """
     C = Q.split(',')
     F = C
     for l in range(0,len(C)):
@@ -96,7 +88,8 @@ def _Qpartial(m, Q):
     return ','.join(F)
 
 def _Qproduct(m, Q):
-    """Product operator in Q(p)"""
+    """Product operator in Q(p)
+    """
     C = Q.split(',')
     CC = copy(C)
     for l in range(0,len(C)):
@@ -104,6 +97,7 @@ def _Qproduct(m, Q):
     return ','.join(CC)
 
 def _akl(mu, W2, Qkl):
-    """Compute a(p-n, n) factors from Q(p-n, n)"""
+    """Compute a(p-n, n) factors from Q(p-n, n)
+    """
     akl = mu*(Qkl.conjugate()+W2.conjugate()*Qkl)
     return akl

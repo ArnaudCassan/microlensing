@@ -1,21 +1,11 @@
-# -*- coding: utf-8 -*-
+# Copyright (c) Arnaud Cassan.
+# Distributed under the terms of the MIT license.
 
-#############################################################################
-# Copyright (c) 2017, Arnaud Cassan                                         #
-#                                                                           #
-# Distributed under the terms of the MIT license.                           #
-#                                                                           #
-# The full license is in the file LICENSE, distributed with this software.  #
-#                                                                           #
-# This module is part of gravitational microlensing package:                #
-# https://github.com/ArnaudCassan/microlensing                              #
-#                                                                           #
-# This module is based on method presented in publication:                  #
-#   Cassan, A. (2017), Fast computation of quadrupole and hexadecapole      #
-#       approximations in microlensing with a single point-source           #
-#       evaluation, Mon. Not. R. Astron. 468, 3993.                         #
-#   Please quote if used for a publication                                  #
-#############################################################################
+# Associated publication:
+#   Cassan, A. (2017), Fast computation ofcquadrupole
+#   and hexadecapole approximations in microlensing
+#   with a single point-sourcecevaluation,
+#   Mon. Not. R. Astron. 468, 3993.
 
 import numpy as np
 
@@ -24,7 +14,7 @@ def quadrupole(Wk, rho, Gamma):
         
         Parameters
         ----------
-        Wk : complex 2-D array
+        Wk : complex 2D array
             Derivatives of lens equation (cf. puplication).
         rho : float
             Source radius in Theta_E units.
@@ -79,7 +69,7 @@ def hexadecapole(Wk, rho, Gamma):
         
         Parameters
         ----------
-        Wk : complex 2-D array
+        Wk : complex 2D array
             Derivatives of lens equation (cf. puplication).
         rho : float
             Source radius in Theta_E units.
@@ -158,12 +148,14 @@ def hexadecapole(Wk, rho, Gamma):
     return np.array([A0, A2, A4])
 
 def _akl(mu, W2, Qkl):
-    """Compute a(p-n, n) factors from Q(p-n, n)"""
+    """Compute a(p-n, n) factors from Q(p-n, n)
+    """
     akl = mu*(np.conj(Qkl) + np.conj(W2) * Qkl)
     return akl
 
 def _solvelenseq(s, q, zeta):
-    """Solve binary lens equation [convention Cassan (2008)]"""
+    """Solve binary lens equation [convention Cassan (2008)]
+    """
     coefs = [(1. + q)**2 * (s + np.conj(zeta)) * np.conj(zeta),
              (1. + q) * (s * (q - np.abs(zeta)**2 * (1. + q)) + (1. + q) * ((1. + 2 * s**2) - np.abs(zeta)**2 + 2. * s * np.conj(zeta)) * zeta.conjugate()),
              (1. + q) * (s**2 * q - s * (1. + q) * zeta + (2 * s + s**3 * (1. + q) + s**2 * (1. + q) * np.conj(zeta)) * np.conj(zeta) - 2. * np.abs(zeta)**2 * (1. + q) * (1. + s**2 + s * np.conj(zeta))),
@@ -173,7 +165,8 @@ def _solvelenseq(s, q, zeta):
     return np.roots(coefs)
 
 def example():
-    """Example"""
+    """Example
+    """
     # binary lens and source parameters
     s = 1.7
     q = 0.2
