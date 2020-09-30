@@ -21,13 +21,13 @@ setup_args = dict(
     name            = name,
     version         = version_ns['__version__'],
     packages        = packages,
-    description     = "Python modelling suite for gravitational microlensing",
-    long_description= "Python modelling suite for gravitational microlensing",
+    description     = 'Gravitational microlensing',
+    long_description= 'Gravitational microlensing',
     author          = 'Arnaud Cassan',
-    author_email    = 'cassan@iap.fr',
-    url             = 'https://github.com/ArnaudCassan/microlensing',
+    author_email    = 'arnaud.cassan@iap.fr',
+    url             = 'https://github.com/ArnaudCassan/microlensing.git',
     license         = 'MIT License',
-    platforms       = "Linux, Mac OS X, Windows",
+    platforms       = 'Linux, Mac OS X, Windows',
     keywords        = ['Astronomy', 'Astrophysics', 'Microlensing', 'Science', 'Exoplanets'],
     classifiers     = [
         'Intended Audience :: Developers',
@@ -35,9 +35,7 @@ setup_args = dict(
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-
     ],
 )
 
