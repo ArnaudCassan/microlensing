@@ -1,15 +1,5 @@
-# -*- coding: utf-8 -*-
-
-#############################################################################
-# Copyright (c) 2017, Arnaud Cassan                                         #
-#                                                                           #
-# Distributed under the terms of the MIT license.                           #
-#                                                                           #
-# The full license is in the file LICENSE, distributed with this software.  #
-#                                                                           #
-# This module is part of gravitational microlensing package:                #
-# https://github.com/ArnaudCassan/microlensing                              #
-#############################################################################
+# Copyright (c) Arnaud Cassan.
+# Distributed under the terms of the MIT license.
 
 import sys, os
 import numpy as np
