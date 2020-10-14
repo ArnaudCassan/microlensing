@@ -1,10 +1,23 @@
 name = 'microlensing'
 
-import sys
-import os
-
+import os, sys, platform
 from distutils.core import setup
+from distutils.extension import Extension
+from Cython.Build import cythonize
 
+if platform.system() == 'Windows':
+    compile_extra_args = ['/std:c++latest', '/EHsc']
+elif platform.system() == 'Darwin':
+    compile_extra_args = ['-std=c++11', '-mmacosx-version-min=10.9']
+    link_extra_args = ['-stdlib=libc++', '-mmacosx-version-min=10.9']
+else:
+    compile_extra_args = []
+    link_extra_args = []
+    
+extensions = [Extension('microlensing.mismap.vbb.vbb', sources=['microlensing/mismap/vbb/vbb.pyx'], language='c++', extra_compile_args=compile_extra_args, extra_link_args=link_extra_args)]
+
+setup(name = name, ext_modules = cythonize(extensions))
+   
 pjoin = os.path.join
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -43,13 +56,9 @@ if 'develop' in sys.argv or any(a.startswith('bdist') for a in sys.argv):
     import setuptools
 
 setuptools_args = {}
+install_requires = setuptools_args['install_requires'] = []# ['numpy', 'h5py', 'scipy', 'pandas', 'bokeh', 'matplotlib', 'sympy', 'mpmath', 'astropy', 'multiprocessing']
 
-install_requires = setuptools_args['install_requires'] = [
-    'numpy'
-]
-
-extras_require = setuptools_args['extras_require'] = {
-}
+extras_require = setuptools_args['extras_require'] = {}
 
 if 'setuptools' in sys.modules:
     setup_args.update(setuptools_args)
